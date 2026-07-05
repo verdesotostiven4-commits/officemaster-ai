@@ -1,1 +1,67 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OfficeMaster AI</title><style>:root{--a:#2f7cff;--b:#0b1220;--card:#111a2b;--line:#26364f;--text:#eef4ff;--muted:#9fb0ca}*{box-sizing:border-box}body{margin:0;height:100vh;overflow:hidden;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 15% 20%,color-mix(in srgb,var(--a) 45%,transparent),transparent 28%),#07101d;color:var(--text)}.wrap{height:100vh;display:grid;grid-template-rows:52px 1fr;gap:10px;padding:18px}.nav{display:flex;align-items:center;justify-content:space-between}.brand{font-size:20px;font-weight:900}.tag{color:var(--muted);font-weight:700}.app{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:14px;min-height:0}.card{background:linear-gradient(180deg,#121d31,#0c1424);border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 20px 55px #0008;min-height:0}.hero{display:flex;flex-direction:column;justify-content:space-between}.badge{width:max-content;padding:9px 12px;border-radius:999px;background:color-mix(in srgb,var(--a) 20%,transparent);color:#dbeafe;border:1px solid color-mix(in srgb,var(--a) 55%,#334155)}h1{font-size:clamp(36px,4vw,58px);line-height:.95;margin:18px 0 10px}.accent{color:var(--a)}p{color:var(--muted);line-height:1.45}.stats{display:grid;gap:10px}.stat{padding:12px;border-radius:16px;background:#07101d;border:1px solid var(--line)}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.tab{border:1px solid var(--line);background:#07101d;color:var(--text);border-radius:16px;padding:13px 8px;text-align:center;font-weight:900;cursor:pointer;transition:.2s}.tab:hover,.idea:hover{transform:translateY(-2px);border-color:var(--a)}.tab.on{background:var(--a);color:#04111f}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{margin-top:10px}input,select,textarea{width:100%;background:#070b18;color:white;border:1px solid var(--line);border-radius:15px;padding:12px;font-size:15px;outline:none}textarea{height:118px;resize:none}input:focus,select:focus,textarea:focus{border-color:var(--a);box-shadow:0 0 0 3px color-mix(in srgb,var(--a) 22%,transparent)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}button{border:0;border-radius:15px;padding:13px;font-weight:900;cursor:pointer;transition:.2s}.primary{background:var(--a);color:#04111f}.ghost{background:#07101d;color:var(--text);border:1px solid var(--line)}button:hover{transform:translateY(-2px);filter:brightness(1.12)}.ideas{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.idea{padding:10px;border-radius:14px;background:#07101d;border:1px solid var(--line);color:#dbeafe;cursor:pointer;font-size:13px;transition:.2s}.preview{height:100%;display:grid;grid-template-rows:auto 1fr auto;gap:10px}.screen{background:#050a16;border:1px solid var(--line);border-radius:20px;padding:16px;overflow:hidden;position:relative}.docline{height:12px;border-radius:99px;background:#20304a;margin:11px 0}.docline:nth-child(2){width:78%}.docline:nth-child(3){width:92%}.docline:nth-child(4){width:62%}.output{white-space:pre-wrap;color:#dce9ff;font-size:14px;line-height:1.35}.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.mini div{background:#07101d;border:1px solid var(--line);border-radius:15px;padding:10px;text-align:center;font-size:13px}.toast{position:fixed;right:18px;bottom:18px;background:var(--a);color:#04111f;padding:12px 16px;border-radius:16px;font-weight:900;opacity:0;transform:translateY(12px);transition:.25s}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:950px){body{height:auto;overflow:auto}.wrap{height:auto}.app{grid-template-columns:1fr}.card{min-height:auto}textarea{height:120px}}</style></head><body><div class="wrap"><nav class="nav"><div class="brand">OfficeMaster AI</div><div class="tag">Crea • Edita • Descarga</div></nav><main class="app"><section class="card hero"><div><div class="badge" id="badge">Word Studio</div><h1>Tu oficina con <span class="accent">IA</span>, en una sola pantalla.</h1><p>Genera documentos, presentaciones y hojas de cálculo desde una idea. Diseño compacto, profesional y sin scrollear en PC.</p></div><div class="stats"><div class="stat">● Word azul: informes y tareas</div><div class="stat">● PowerPoint naranja: exposiciones</div><div class="stat">● Excel verde: tablas y negocios</div></div></section><section class="card"><div class="tabs"><div class="tab on" data-t="word">Word</div><div class="tab" data-t="ppt">PPT</div><div class="tab" data-t="excel">Excel</div><div class="tab" data-t="auto">Auto</div></div><div class="field"><input id="title" value="Documento profesional"></div><div class="row field"><select id="style"><option>Profesional</option><option>Académico</option><option>Escolar</option><option>Negocio</option></select><select id="level"><option>Completo</option><option>Resumido</option><option>Avanzado</option></select></div><div class="field"><textarea id="prompt">Hazme una presentación profesional sobre turismo en Galápagos con 8 diapositivas.</textarea></div><div class="actions"><button class="primary" id="make">Generar</button><button class="ghost" id="down">Descargar</button></div><div class="ideas" id="ideas"></div></section><section class="card preview"><div><b>Vista previa viva</b><p id="kind">Documento Word</p></div><div class="screen"><div class="output" id="out"></div><div id="skeleton"><div class="docline"></div><div class="docline"></div><div class="docline"></div><div class="docline"></div></div></div><div class="mini"><div>.docx/.doc</div><div>.pptx/.html</div><div>.xlsx/.csv</div></div></section></main></div><div class="toast" id="toast">Listo</div><script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script><script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script><script>const $=id=>document.getElementById(id);let mode='word';const themes={word:['#2f7cff','Word Studio','Documento Word'],ppt:['#f97316','PowerPoint Studio','Presentación PowerPoint'],excel:['#22c55e','Excel Studio','Hoja Excel'],auto:['#a855f7','Modo Automático','Detección automática']};function setMode(m){mode=m;document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.t===m));document.documentElement.style.setProperty('--a',themes[m][0]);$('badge').textContent=themes[m][1];$('kind').textContent=themes[m][2];render()}document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>setMode(t.dataset.t));const ideas=['Informe académico completo','Exposición de 8 diapositivas','Excel de ventas y ganancias','Corregir y mejorar redacción','Inventario con stock','Presupuesto para negocio','Carta formal profesional','Dashboard básico'];ideas.forEach(x=>{let d=document.createElement('div');d.className='idea';d.textContent=x;d.onclick=()=>{$('prompt').value=x;render();pulse('Idea cargada')};$('ideas').appendChild(d)});function real(){let p=$('prompt').value.toLowerCase();if(mode!=='auto')return mode;if(p.includes('excel')||p.includes('venta')||p.includes('inventario'))return'excel';if(p.includes('present')||p.includes('diapositiva')||p.includes('expos'))return'ppt';return'word'}function content(){let r=real(),t=$('title').value||'OfficeMaster AI',s=$('style').value,l=$('level').value,p=$('prompt').value;let base=t+'\nEstilo: '+s+' • Nivel: '+l+'\nSolicitud: '+p+'\n\n';if(r==='word')return base+'Estructura sugerida:\n1. Portada\n2. Introducción\n3. Desarrollo\n4. Conclusión\n5. Referencias';if(r==='ppt')return base+'Diapositivas:\n1. Portada\n2. Objetivo\n3. Contexto\n4. Ideas clave\n5. Ejemplos\n6. Conclusión\n7. Guion';return base+'Columnas:\nProducto | Cantidad | Costo | Venta | Ganancia\nIncluye fórmulas, resumen y control.'}function render(){$('out').textContent=content();$('skeleton').style.display='none'}function pulse(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1700)}$('make').onclick=()=>{render();pulse('Vista previa generada')};['prompt','title','style','level'].forEach(id=>$(id).addEventListener('input',render));function blobSave(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),800)}function safe(){return ($('title').value||'officemaster').replace(/[^a-z0-9áéíóúñ]+/gi,'_')}async function word(){if(window.docx){const{Document,Packer,Paragraph,HeadingLevel}=docx;let doc=new Document({sections:[{children:[new Paragraph({text:$('title').value,heading:HeadingLevel.TITLE}),new Paragraph(content())]}]});blobSave(await Packer.toBlob(doc),safe()+'.docx')}else blobSave(new Blob(['<html><body><pre>'+content()+'</pre></body></html>'],{type:'application/msword'}),safe()+'.doc')}async function ppt(){if(window.PptxGenJS){let p=new PptxGenJS();['Portada','Objetivo','Ideas clave','Desarrollo','Conclusión'].forEach((x,i)=>{let s=p.addSlide();s.background={color:'111827'};s.addText(i?x:$('title').value,{x:.6,y:.5,w:12,h:.6,fontSize:28,bold:true,color:'ffffff'});s.addText($('prompt').value,{x:.8,y:1.5,w:11,h:2,fontSize:18,color:'cbd5e1'})});await p.writeFile({fileName:safe()+'.pptx'})}else blobSave(new Blob(['<h1>'+$('title').value+'</h1><pre>'+content()+'</pre>'],{type:'text/html'}),safe()+'_slides.html')}async function excel(){if(window.ExcelJS){let wb=new ExcelJS.Workbook(),ws=wb.addWorksheet('OfficeMaster');ws.addRow([$('title').value]);ws.addRow(['Producto','Cantidad','Costo','Venta','Ganancia']);[['A',10,2,4],['B',8,1.5,3],['C',12,3,5]].forEach((r,i)=>ws.addRow([...r,{formula:'D'+(i+3)+'-C'+(i+3)}]));let b=await wb.xlsx.writeBuffer();blobSave(new Blob([b]),safe()+'.xlsx')}else blobSave(new Blob(['Producto,Cantidad,Costo,Venta,Ganancia\nA,10,2,4,2\nB,8,1.5,3,1.5'],{type:'text/csv'}),safe()+'.csv')}$('down').onclick=async()=>{let r=real();pulse('Preparando descarga...');if(r==='word')await word();if(r==='ppt')await ppt();if(r==='excel')await excel();pulse('Archivo descargado')};render();</script></body></html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OfficeMaster AI</title>
+  <link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">OfficeMaster AI</div>
+      <div class="tag">Crea • Edita • Descarga</div>
+    </nav>
+
+    <main class="app">
+      <section class="card hero">
+        <div>
+          <div class="badge" id="badge">Word Studio</div>
+          <h1>Documentos profesionales con <span class="accent">IA</span>.</h1>
+          <p>Genera Word, PowerPoint y Excel en una experiencia compacta, clara y con pasos visibles de trabajo.</p>
+        </div>
+        <div class="progressBox">
+          <b>Proceso en vivo</b>
+          <div class="steps" id="steps"></div>
+        </div>
+      </section>
+
+      <section class="card studio">
+        <div class="tabs">
+          <button class="tab on" data-t="word">Word</button>
+          <button class="tab" data-t="ppt">PPT</button>
+          <button class="tab" data-t="excel">Excel</button>
+          <button class="tab" data-t="auto">Auto</button>
+        </div>
+
+        <input id="title" value="Documento profesional">
+        <div class="row">
+          <select id="style"><option>Profesional</option><option>Académico</option><option>Escolar</option><option>Negocio</option></select>
+          <select id="level"><option>Completo</option><option>Resumido</option><option>Avanzado</option></select>
+        </div>
+        <textarea id="prompt">Hazme una presentación profesional sobre turismo en Galápagos con 8 diapositivas.</textarea>
+        <div class="actions">
+          <button class="primary" id="make">Generar</button>
+          <button class="ghost" id="down">Descargar</button>
+        </div>
+        <div class="ideas" id="ideas"></div>
+      </section>
+
+      <section class="card preview">
+        <div>
+          <b>Vista previa</b>
+          <p id="kind">Documento Word</p>
+        </div>
+        <div class="screen"><pre id="out"></pre></div>
+        <div class="mini"><span>.docx</span><span>.pptx</span><span>.xlsx</span></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast">Listo</div>
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
