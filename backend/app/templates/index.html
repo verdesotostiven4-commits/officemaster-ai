@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OfficeMaster AI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="badge">Proyecto inicial</div>
+      <h1>OfficeMaster AI</h1>
+      <p>Crea Word, PowerPoint y Excel con una experiencia simple, bonita y profesional.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Que quieres crear o mejorar hoy?</h2>
+
+      <form action="/generate-form" method="post">
+        <label for="title">Titulo del archivo</label>
+        <input id="title" name="title" value="OfficeMaster AI">
+
+        <label for="file_type">Tipo de archivo</label>
+        <select id="file_type" name="file_type">
+          <option value="auto">Automatico</option>
+          <option value="word">Word</option>
+          <option value="powerpoint">PowerPoint</option>
+          <option value="excel">Excel</option>
+        </select>
+
+        <label for="style">Estilo</label>
+        <select id="style" name="style">
+          <option value="professional">Profesional</option>
+          <option value="academic">Academico</option>
+          <option value="school">Escolar</option>
+          <option value="business">Negocio</option>
+          <option value="minimal">Minimalista</option>
+        </select>
+
+        <label for="prompt">Escribe tu pedido</label>
+        <textarea id="prompt" name="prompt" rows="7" placeholder="Ejemplo: Hazme una presentacion profesional sobre turismo en Galapagos con 8 diapositivas."></textarea>
+
+        <button type="submit">Generar archivo</button>
+      </form>
+    </section>
+
+    <section class="cards">
+      <article><h3>Word</h3><p>Informes, ensayos, cartas, correccion y documentos academicos.</p></article>
+      <article><h3>PowerPoint</h3><p>Presentaciones profesionales, exposiciones y guiones.</p></article>
+      <article><h3>Excel</h3><p>Ventas, inventarios, presupuestos, graficos y dashboards.</p></article>
+    </section>
+  </main>
+</body>
+</html>
